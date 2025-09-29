@@ -1,50 +1,133 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Swapnest - Home</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Swapnest — Home</title>
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+              <!-- Fonts -->
+              <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Playfair+Display:wght@700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
 
-  <!-- CSS -->
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
+             <!-- Styles -->
+                <link rel="stylesheet" href="style.css" />
+                </head>
+                <body>
 
-  <!-- Header -->
-  <header>
-    <h1>Swapnest</h1>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="products.html">Products</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-  </header>
+                <!-- HEADER -->
+                <header class="header" role="banner">
+                    <div class="brand">
+                    <h1 class="mono">swapnest</h1>
+                    <div style="font-size:.88rem; color:var(--muted); margin-left:6px;">
+                        the national bartering app
+                    </div>
+                    </div>
 
-  <!-- Main -->
-  <main>
-    <h2>Welcome to Swapnest!</h2>
-    <p>Swapnest is an online bartering system where you can trade items safely with your community.</p>
+                    <nav class="nav" role="navigation" aria-label="Main navigation">
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About</a>
+                    <a href="products.html">Products</a>
+                    <a href="contact.html">Contact</a>
+                    </nav>
+                </header>
 
-    <!-- Hero banner -->
-    <img class="hero" src="images/homebanner/logo/hero-banner.jpg" alt="Hero Banner">
+                                <!-- MAIN -->
+                                <main class="container" role="main">
+                                    <h2 id="typed-line" aria-hidden="true" class="mono" style="font-size:1.05rem; margin-bottom:.5rem;"></h2>
 
-    <!-- Features -->
-    <h3>Why use Swapnest?</h3>
-    <ul>
-      <li>Safe trades</li>
-      <li>Easy to use</li>
-      <li>Community-based</li>
-    </ul>
+                                    <h3 class="section-title flicker">Welcome to the future of local swapping</h3>
+
+                                    <img class="hero" src="images/homebanner/logo/hero-banner.jpg"
+                                        alt="Swapnest hero banner — community swapping" />
+
+                                    <p class="lead">
+                                    Swapnest started as a student idea — a small project built to help friends swap textbooks, gear and small things
+                                    without the hassle. Today it aims to be a national network where communities trade goods safely and with a smile.
+                                    </p>
+
+    <section class="features" aria-label="Key features">
+      <article class="feature">
+        <h4>Fast posting</h4>
+        <p>Three steps to list: title, images, swap or sell. Post in seconds — we keep the rest clean and simple.</p>
+      </article>
+
+      <article class="feature">
+        <h4>Community trust</h4>
+        <p>Ratings, reviews and clear profiles help neighbours trade safely. We encourage face-to-face swaps in public spaces.</p>
+      </article>
+
+      <article class="feature">
+        <h4>True swapping</h4>
+        <p>Not just buying — propose swaps, add extra items, or create bundle deals for creative exchanges.</p>
+      </article>
+
+      <article class="feature">
+        <h4>Green & local</h4>
+        <p>Reduce waste by keeping items moving locally. Swapnest is designed to make re-use first choice.</p>
+      </article>
+    </section>
+
+    <section style="margin-top:1.5rem;">
+      <h4 class="section-title">Watch: Bartering — why it still matters</h4>
+      <div style="max-width:900px; margin:0 auto;">
+        <iframe width="100%" height="480"
+                src="https://www.youtube.com/embed/TrOgdem-WkE?start=3"
+                title="Bartering explained"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen>
+        </iframe>
+      </div>
+    </section>
+
+    <section style="margin-top:1.5rem; text-align:left;">
+      <h4 class="section-title">A short story</h4>
+      <p style="color:var(--muted);">
+        In 2023 three students fed up with clutter and wasted cash built a simple swap board in their dorm. They posted a
+        lamp, traded it for a keyboard, and then swapped the keyboard for a bicycle light. The cycle of small wins became
+        a simple truth — trading together saved money and made friends. That seed became Swapnest: a place for small, human trades.
+      </p>
+    </section>
+
+    <div style="margin-top:1.5rem;">
+      <a class="btn" href="products.html" title="Browse items">Browse items</a>
+      <a style="margin-left:0.75rem; color:var(--muted);" href="about.html">Read our story</a>
+    </div>
   </main>
 
-  <!-- Footer -->
-  <footer>
-    <p>© 2025 Swapnest</p>
-  </footer>
+                        <!-- FOOTER -->
+                        <footer>
+                            <p style="color:var(--muted);" class="mono">© 2025 Swapnest — built with community in mind</p>
+                        </footer>
+
+                        <!-- BOTTOM NAV -->
+                        <div class="bottom-nav" role="navigation" aria-label="Quick navigation">
+                            <a href="index.html">Home</a>
+                            <a href="products.html">Products</a>
+                            <a href="contact.html">Contact</a>
+                        </div>
+
+  <!-- Inline JS: typed console -->
+  <script>
+    (function() {
+      const line = "» Initializing Swapnest barter network... [online]";
+      const el = document.getElementById("typed-line");
+      let i = 0;
+      function tick() {
+        if (i < line.length) {
+          el.textContent += line.charAt(i++);
+          setTimeout(tick, 45 + Math.random()*35);
+        } else {
+          // small blink after typing
+          setInterval(()=> {
+            el.textContent = el.textContent.endsWith("]") ?
+              "» Initializing Swapnest barter network... [online]" :
+              el.textContent + " ";
+          }, 6000);
+        }
+      }
+      tick();
+    })();
+  </script>
 
 </body>
 </html>

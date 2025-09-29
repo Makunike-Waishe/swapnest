@@ -1,47 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Swapnest - Contact</title>
 
-  <!-- Fonts + CSS -->
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Playfair+Display:wght@700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
 
-  <header>
-    <h1>Swapnest</h1>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="products.html">Products</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-  </header>
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
 
-  <main>
-    <h2>Contact Us</h2>
-    <p>If you have any questions, fill out the form below:</p>
+                <!-- HEADER -->
+                <header>
+                    <h1 class="mono">swapnest</h1>
+                    <nav aria-label="Main navigation">
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About</a>
+                    <a href="products.html">Products</a>
+                    <a href="contact.html">Contact</a>
+                    </nav>
+                </header>
 
-    <form>
-      <label>Name:</label>
-      <input type="text" name="name">
+                        <!-- MAIN -->
+                        <main>
+                            <h2>Contact Us</h2>
+                            <p>Questions, reports, or partnership ideas — reach out below or use the quick form.</p>
 
-      <label>Email:</label>
-      <input type="email" name="email">
+                            <!-- Embedded Google Form -->
+                            <section aria-label="Contact form embed">
+                            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScBs5uljd-0tl_1xYf0kYdJWr1TLrQEH6ttoDe_Ao9S1-6j9A/viewform?embedded=true"
+                                    width="100%" height="800" frameborder="0" marginheight="0" marginwidth="0">
+                                Loading…
+                            </iframe>
+                            </section>
 
-      <label>Message:</label>
-      <textarea name="message" rows="5"></textarea>
+                            <!-- Fallback contact form -->
+                            <form aria-label="Fallback contact form" style="margin-top:1.25rem;">
+                            <label for="name">Name</label>
+                            <input id="name" name="name" type="text" placeholder="Your name">
 
-      <input type="submit" value="Send Message">
-    </form>
+                            <label for="email">Email</label>
+                            <input id="email" name="email" type="email" placeholder="you@example.com">
+
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="5" placeholder="Write your message here"></textarea>
+
+                            <input class="btn" type="submit" value="Send Message">
+                            </form>
+
+    <!-- Embedded Google Map -->
+    <section aria-label="Location map" style="margin-top:1.5rem;">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3583.4770464857484!2d27.876455!3d-26.083342!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e959ef5277b96a7%3A0xc4aa15508f8e5e8c!2sIIE%20MSA!5e0!3m2!1sen!2sza!4v1759168373510!5m2!1sen!2sza"
+              width="100%" height="400"
+              style="border:0; border-radius:8px;"
+              allowfullscreen="" loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </section>
   </main>
 
+  <!-- FOOTER -->
   <footer>
-    <p>© 2025 Swapnest</p>
+    <p class="mono">© 2025 swapnest</p>
   </footer>
+
+  <!-- BOTTOM NAV -->
+  <div class="bottom-nav" role="navigation" aria-label="Quick navigation">
+    <a href="index.html"><span class="nav-dot" aria-hidden="true"></span>Home</a>
+    <a href="products.html"><span class="nav-dot" aria-hidden="true"></span>Products</a>
+    <a href="contact.html"><span class="nav-dot" aria-hidden="true"></span>Contact</a>
+  </div>
 
 </body>
 </html>

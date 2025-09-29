@@ -1,54 +1,264 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Swapnest - Products</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Swapnest — Products</title>
 
-  <!-- Fonts + CSS -->
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
+                <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Playfair+Display:wght@700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+                <link rel="stylesheet" href="style.css" />
+                </head>
+                <body>
 
-  <header>
-    <h1>Swapnest</h1>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="products.html">Products</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-  </header>
+                <header class="header" role="banner">
+                    <div class="brand">
+                    <h1 class="mono">swapnest</h1>
+                    <div style="font-size:.88rem; color:var(--muted); margin-left:6px;">product swap hub</div>
+                    </div>
 
-  <main>
-    <h2>Products Available for Swap</h2>
+                    <nav class="nav" role="navigation" aria-label="Main navigation">
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About</a>
+                    <a class="active" href="products.html">Products</a>
+                    <a href="contact.html">Contact</a>
+                    </nav>
+                </header>
 
-    <!-- Product 1 -->
-    <div class="product-card">
-      <h3>iPad Mini Air – R1600</h3>
-      <p>Light, fast, and perfect for notes or Netflix. Great condition, no cracks or scratches.</p>
-      <img src="images/product mock2/proto4.jpeg" alt="iPad Mini Air">
-    </div>
+  <main class="container" role="main">
+    <h2 class="section-title flicker">Available swaps — pick something you love</h2>
 
-    <!-- Product 2 -->
-    <div class="product-card">
-      <h3>2024 KTM 85 Mini Bike – R900</h3>
-      <p>Like new! Normally worth R64,999, but available here for just R900. Fast, shiny, and perfect condition.</p>
-      <img src="images/product mock1/p1m1.jpeg" alt="KTM 85 Mini Bike">
-    </div>
+    <p class="lead">Hover a card to preview more images. Click a card to open the gallery; use arrows or keyboard to move through photos. Each listing below has a short story so you know the item’s history.</p>
 
-    <!-- Product 3 -->
-    <div class="product-card">
-      <h3>Audemars Piguet Royal Oak – Best Offer</h3>
-      <p>Vintage pocket watch, classy and functional. Slightly worn but still timeless. Accepting best offers.</p>
-      <img src="images/product mock3/pr3mk1.jpg" alt="Audemars Piguet Royal Oak">
-    </div>
+    <!-- PRODUCTS GRID -->
+    <div class="products-grid" id="productsGrid">
+
+      <!-- Product 1 -->
+      <article class="product-card" tabindex="0"
+               data-images='["images/product mock2/proto4.jpeg","images/product mock2/proto3.jpeg","images/product mock2/proto8.jpeg"]'
+               data-captions='["iPad Mini — front view","iPad Mini — side profile","iPad Mini — box and charger included"]'
+               data-title="iPad Mini Air — R1600"
+               data-type="Sale">
+        <div class="badge">Sale</div>
+        <h3>iPad Mini Air — R1600</h3>
+        <p>A light, reliable iPad — perfect for students. Battery healthy, screen intact. Seller note: "Used for notes and streaming; replacing because I upgraded."</p>
+
+        <div class="product-media" aria-hidden="true">
+          <img src="images/product mock2/proto4.jpeg" alt="iPad image" />
+        </div>
+
+        <div class="meta">
+          <span>Posted: 2 days ago</span>
+          <span>Condition: Gently used</span>
+        </div>
+      </article>
+
+      <!-- Product 2 -->
+      <article class="product-card" tabindex="0"
+               data-images='["images/product mock1/p1m1.jpeg","images/product mock1/product.jpeg","images/product mock1/proto1.jpeg"]'
+               data-captions='["KTM — front","KTM — close up","KTM — profile view"]'
+               data-title="2024 KTM 85 Mini Bike — R900"
+               data-type="Swap">
+        <div class="badge">Swap</div>
+        <h3>2024 KTM 85 Mini Bike — R900</h3>
+        <p>A nearly-new mini bike — the seller says it's been ridden carefully and is in great condition. A bold swap — perfect for a serious bargain hunter.</p>
+
+        <div class="product-media" aria-hidden="true">
+          <img src="images/product mock1/p1m1.jpeg" alt="KTM profile" />
+        </div>
+
+        <div class="meta">
+          <span>Posted: 5 days ago</span>
+          <span>Condition: Like new</span>
+        </div>
+      </article>
+
+      <!-- Product 3 -->
+      <article class="product-card" tabindex="0"
+               data-images='["images/product mock3/pr3mk1.jpg","images/product mock3/pr3mk3.jpeg","images/product mock3/pr3m2.jpeg"]'
+               data-captions='["Vintage watch — front","Vintage watch — case detail","Vintage watch — chain & box"]'
+               data-title="Audemars Piguet Royal Oak — Best Offer"
+               data-type="Sale">
+        <div class="badge">Sale</div>
+        <h3>Audemars Piguet Royal Oak — Best Offer</h3>
+        <p>An old-school pocket watch with stories. Seller note: "Passed down; has small wear but full character. Prefer local collection."</p>
+
+        <div class="product-media" aria-hidden="true">
+          <img src="images/product mock3/pr3mk1.jpg" alt="Vintage watch" />
+        </div>
+
+        <div class="meta">
+          <span>Posted: 1 week ago</span>
+          <span>Condition: Antique (working)</span>
+        </div>
+      </article>
+
+    </div><!-- /.products-grid -->
   </main>
 
   <footer>
-    <p>© 2025 Swapnest</p>
+    <p class="mono">© 2025 Swapnest — trade local, trade smart</p>
   </footer>
 
-</body>
-</html>
+  <div class="bottom-nav" role="navigation" aria-label="Quick navigation">
+    <a href="index.html">Home</a>
+    <a href="products.html">Products</a>
+    <a href="contact.html">Contact</a>
+  </div>
+
+  <!-- MODAL GALLERY -->
+  <div id="modal" class="modal" aria-hidden="true" role="dialog" aria-label="Image gallery">
+    <button class="close" aria-label="Close gallery">&times;</button>
+
+    <div class="viewport">
+      <div class="image-wrap">
+        <img id="modalImg" src="" alt="Expanded product image" />
+      </div>
+
+      <aside class="side">
+        <div class="controls">
+          <button id="prevBtn" aria-label="Previous image">◀ Prev</button>
+          <button id="nextBtn" aria-label="Next image">Next ▶</button>
+        </div>
+
+        <h3 id="modalTitle" style="margin-top:0;"></h3>
+        <div id="modalCaption" class="caption"></div>
+
+        <div style="margin-top:1rem;">
+          <p style="color:var(--muted); font-size:.95rem;">Tips: Use ← and → keys to move between images. Click outside the image or press Esc to close.</p>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+                <!-- INLINE JS: slideshow on hover, modal gallery with prev/next, keyboard nav -->
+                <script>
+                    (function () {
+                    const productCards = document.querySelectorAll(".product-card");
+                    const modal = document.getElementById("modal");
+                    const modalImg = document.getElementById("modalImg");
+                    const modalTitle = document.getElementById("modalTitle");
+                    const modalCaption = document.getElementById("modalCaption");
+                    const prevBtn = document.getElementById("prevBtn");
+                    const nextBtn = document.getElementById("nextBtn");
+                    const closeBtn = document.querySelector(".close");
+
+                    let activeGallery = null;
+                    let activeIndex = 0;
+
+                    // helper: parse JSON dataset (safe)
+                    function parseDataset(el, key) {
+                        try {
+                        return JSON.parse(el.dataset[key]);
+                        } catch (e) {
+                        return [];
+                        }
+                    }
+
+                            // attach hover slideshow & click to open modal
+                            productCards.forEach(card => {
+                                const images = parseDataset(card, "images");
+                                const captions = parseDataset(card, "captions");
+                                const mediaImg = card.querySelector(".product-media img");
+                                let hoverTimer = null;
+                                let hoverIndex = 0;
+
+                                // ensure initial src is first image
+                                if (images.length > 0) {
+                                mediaImg.src = images[0];
+                                }
+
+                                // hover slideshow
+                                card.addEventListener("mouseenter", () => {
+                                if (images.length <= 1) return;
+                                hoverTimer = setInterval(() => {
+                                    hoverIndex = (hoverIndex + 1) % images.length;
+                                    mediaImg.src = images[hoverIndex];
+                                }, 1400);
+                                });
+                                card.addEventListener("mouseleave", () => {
+                                clearInterval(hoverTimer);
+                                hoverIndex = 0;
+                                if (images.length > 0) mediaImg.src = images[0];
+                                });
+
+                                // click to open modal
+                                card.addEventListener("click", () => {
+                                const title = card.dataset.title || "";
+                                activeGallery = {
+                                    images: images,
+                                    captions: captions,
+                                    title: title
+                                };
+                                activeIndex = 0;
+                                openModal();
+                                });
+
+                                                // keyboard focus + Enter opens modal (good for accessibility)
+                                                card.addEventListener("keydown", (ev) => {
+                                                if (ev.key === "Enter" || ev.key === " ") {
+                                                    ev.preventDefault();
+                                                    card.click();
+                                                }
+                                                });
+                                            });
+
+                                            // open modal
+                                            function openModal() {
+                                                if (!activeGallery || !activeGallery.images.length) return;
+                                                modal.classList.add("open");
+                                                modal.setAttribute("aria-hidden", "false");
+                                                updateModal();
+                                            }
+
+                                            // update modal display
+                                            function updateModal() {
+                                                modalImg.src = activeGallery.images[activeIndex];
+                                                modalTitle.textContent = activeGallery.title || "";
+                                                const cap = (activeGallery.captions && activeGallery.captions[activeIndex]) || "";
+                                                modalCaption.textContent = cap;
+                                            }
+
+                                                                    // prev / next handlers
+                                                                    prevBtn.addEventListener("click", () => {
+                                                                        if (!activeGallery) return;
+                                                                        activeIndex = (activeIndex - 1 + activeGallery.images.length) % activeGallery.images.length;
+                                                                        updateModal();
+                                                                    });
+                                                                    nextBtn.addEventListener("click", () => {
+                                                                        if (!activeGallery) return;
+                                                                        activeIndex = (activeIndex + 1) % activeGallery.images.length;
+                                                                        updateModal();
+                                                                    });
+
+                                                                    // close
+                                                                    function closeModal() {
+                                                                        modal.classList.remove("open");
+                                                                        modal.setAttribute("aria-hidden", "true");
+                                                                        activeGallery = null;
+                                                                    }
+                                                                    closeBtn.addEventListener("click", closeModal);
+
+                                                                    // close when clicking outside viewport image area
+                                                                    modal.addEventListener("click", (e) => {
+                                                                        if (e.target === modal) closeModal();
+                                                                    });
+
+                                                                    // keyboard navigation
+                                                                    document.addEventListener("keydown", (e) => {
+                                                                        if (!activeGallery) return;
+                                                                        if (e.key === "Escape") closeModal();
+                                                                        if (e.key === "ArrowLeft") {
+                                                                        activeIndex = (activeIndex - 1 + activeGallery.images.length) % activeGallery.images.length;
+                                                                        updateModal();
+                                                                        }
+                                                                        if (e.key === "ArrowRight") {
+                                                                        activeIndex = (activeIndex + 1) % activeGallery.images.length;
+                                                                        updateModal();
+                                                                        }
+                                                                    });
+
+                                                                    })();
+                                                                </script>
+
+                                                                </body>
+                                                                </html>
