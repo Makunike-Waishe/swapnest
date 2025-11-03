@@ -133,14 +133,14 @@ Part 2: Styling & Responsiveness — 15–22 Sept 2025
 
  References
 
-- Facebook Marketplace (Meta). *Facebook Marketplace*. [https://www.facebook.com/marketplace](https://www.facebook.com/marketplace) (Accessed: 7 Aug 2025)  
-- Gumtree South Africa. *Gumtree*. [https://www.gumtree.co.za](https://www.gumtree.co.za) (Accessed: 7 Aug 2025)  
-- OLX South Africa. *OLX*. [https://www.olx.co.za](https://www.olx.co.za) (Accessed: 7 Aug 2025)  
-- W3Schools. *CSS Tutorial*. [https://www.w3schools.com/css](https://www.w3schools.com/css) (Accessed: 29 Sept 2025)  
-- Mozilla Developer Network (MDN). *Responsive design basics*. [https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Responsive_Design](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Responsive_Design) (Accessed: 29 Sept 2025)  
-- YouTube (2023). *Bartering — Why It Still Matters*. [https://www.youtube.com/watch?v=TrOgdem-WkE](https://www.youtube.com/watch?v=TrOgdem-WkE) (Accessed: 29 Sept 2025)  
-- Google Forms (2025). *Embed form for contact*. [https://docs.google.com/forms](https://docs.google.com/forms) (Accessed: 29 Sept 2025)  
-- Google Maps (2025). *Location embed*. [https://maps.google.com](https://maps.google.com) (Accessed: 29 Sept 2025)  
+- Facebook Marketplace (Meta). Facebook Marketplace. [https://www.facebook.com/marketplace](https://www.facebook.com/marketplace) (Accessed: 7 Aug 2025)  
+- Gumtree South Africa. Gumtree. [https://www.gumtree.co.za](https://www.gumtree.co.za) (Accessed: 7 Aug 2025)  
+- OLX South Africa. OLX. [https://www.olx.co.za](https://www.olx.co.za) (Accessed: 7 Aug 2025)  
+- W3Schools. CSS Tutorial. [https://www.w3schools.com/css](https://www.w3schools.com/css) (Accessed: 29 Sept 2025)  
+- Mozilla Developer Network (MDN). Responsive design basics. [https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Responsive_Design](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Responsive_Design) (Accessed: 29 Sept 2025)  
+- YouTube (2023). Bartering — Why It Still Matters*. [https://www.youtube.com/watch?v=TrOgdem-WkE](https://www.youtube.com/watch?v=TrOgdem-WkE) (Accessed: 29 Sept 2025)  
+- Google Forms (2025). Embed form for contact*. [https://docs.google.com/forms](https://docs.google.com/forms) (Accessed: 29 Sept 2025)  
+- Google Maps (2025). Location embed. [https://maps.google.com](https://maps.google.com) (Accessed: 29 Sept 2025)  
 
 ---
 

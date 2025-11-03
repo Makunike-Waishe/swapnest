@@ -1,78 +1,304 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Swapnest - Contact</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Contact Us | Swapnest — Community Swap & Sustainable Trading</title>
+  <meta name="description" content="Contact Swapnest — the local swap marketplace for sustainable trading. Reach out for partnerships, events, volunteering, or general enquiries." />
+  <meta name="keywords" content="swap marketplace, community swap, sustainable trading, local swap community, swap meet" />
+  <meta name="theme-color" content="#0b0f12" />
 
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Playfair+Display:wght@700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 
-    <!-- Styles -->
-    <link rel="stylesheet" href="style.css">
-    </head>
-    <body>
+  <!-- Leaflet CSS (dark map usage) -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-sA+4Zp0b5QvYF2yYx6Dzq3Xgkqk0KkT0p3x0aYkYpqo=" crossorigin=""/>
 
-                <!-- HEADER -->
-                <header>
-                    <h1 class="mono">swapnest</h1>
-                    <nav aria-label="Main navigation">
-                    <a href="index.html">Home</a>
-                    <a href="about.html">About</a>
-                    <a href="products.html">Products</a>
-                    <a href="contact.html">Contact</a>
-                    </nav>
-                </header>
+  <!-- Local stylesheet -->
+  <link rel="stylesheet" href="style.css">
 
-                        <!-- MAIN -->
-                        <main>
-                            <h2>Contact Us</h2>
-                            <p>Questions, reports, or partnership ideas — reach out below or use the quick form.</p>
+  <style>
+    /* Minimal page-level styles for layout and accessibility enhancements */
+    :root {
+      --bg: #0b0f12;
+      --card: #0f1720;
+      --muted: #a9b0b7;
+      --accent: #f4a261;
+      --success: #1aa15f;
+      --error: #ff5a5f;
+      --max-width: 1100px;
+    }
+    html,body { height:100%; margin:0; font-family: "Open Sans", system-ui, Arial, sans-serif; background:var(--bg); color:#eef2f3; }
+    header { display:flex; align-items:center; justify-content:space-between; padding:1rem; max-width:var(--max-width); margin:0 auto; }
+    .mono { font-family: 'Share Tech Mono', monospace; letter-spacing:1px; color:var(--accent); margin:0; }
+    nav a { color:var(--muted); margin-left:1rem; text-decoration:none; font-weight:600; }
+    main { max-width:var(--max-width); margin:0.5rem auto 3rem auto; padding:1rem; }
+    h1, h2 { color:#fff; margin:0.25rem 0 0.5rem 0; }
+    p.lead { color:var(--muted); margin:0 0 1rem 0; }
 
-                            <!-- Embedded Google Form -->
-                            <section aria-label="Contact form embed">
-                            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScBs5uljd-0tl_1xYf0kYdJWr1TLrQEH6ttoDe_Ao9S1-6j9A/viewform?embedded=true"
-                                    width="100%" height="800" frameborder="0" marginheight="0" marginwidth="0">
-                                Loading…
-                            </iframe>
-                            </section>
+    .grid {
+      display:grid;
+      grid-template-columns: 1fr 450px;
+      gap:1.25rem;
+      align-items:start;
+    }
+    @media (max-width:900px) {
+      .grid { grid-template-columns: 1fr; }
+    }
 
-                            <!-- Fallback contact form -->
-                            <form aria-label="Fallback contact form" style="margin-top:1.25rem;">
-                            <label for="name">Name</label>
-                            <input id="name" name="name" type="text" placeholder="Your name">
+    .card {
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border: 1px solid rgba(255,255,255,0.03);
+      padding:1rem;
+      border-radius:10px;
+    }
 
-                            <label for="email">Email</label>
-                            <input id="email" name="email" type="email" placeholder="you@example.com">
+    form label { display:block; margin-top:0.75rem; color:var(--muted); font-size:0.95rem; }
+    input[type="text"], input[type="email"], input[type="tel"], textarea, select {
+      width:100%;
+      padding:0.65rem;
+      margin-top:0.25rem;
+      border-radius:8px;
+      border:1px solid rgba(255,255,255,0.06);
+      background:transparent;
+      color: #eef2f3;
+      font-size:1rem;
+      box-sizing:border-box;
+    }
+    textarea { min-height:120px; resize:vertical; }
+    .btn {
+      margin-top:1rem;
+      padding:0.7rem 1rem;
+      background:var(--accent);
+      color:#0b0f12;
+      border:none;
+      border-radius:8px;
+      font-weight:700;
+      cursor:pointer;
+    }
+    .btn:disabled { opacity:0.6; cursor:not-allowed; }
 
-                            <label for="message">Message</label>
-                            <textarea id="message" name="message" rows="5" placeholder="Write your message here"></textarea>
+    .field-error { color:var(--error); font-size:0.9rem; margin-top:0.5rem; }
+    .form-message { margin-top:0.75rem; padding:0.6rem; border-radius:8px; font-weight:600; }
+    .success { background: rgba(26,161,95,0.12); color:var(--success); border:1px solid rgba(26,161,95,0.18); }
+    .error { background: rgba(255,90,90,0.06); color:var(--error); border:1px solid rgba(255,90,90,0.08); }
 
-                            <input class="btn" type="submit" value="Send Message">
-                            </form>
+    /* Map container */
+    #map { width:100%; height:360px; border-radius:10px; overflow:hidden; border:1px solid rgba(255,255,255,0.04); }
 
-    <!-- Embedded Google Map -->
-    <section aria-label="Location map" style="margin-top:1.5rem;">
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3583.4770464857484!2d27.876455!3d-26.083342!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e959ef5277b96a7%3A0xc4aa15508f8e5e8c!2sIIE%20MSA!5e0!3m2!1sen!2sza!4v1759168373510!5m2!1sen!2sza"
-              width="100%" height="400"
-              style="border:0; border-radius:8px;"
-              allowfullscreen="" loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade">
-      </iframe>
-    </section>
+    footer { max-width:var(--max-width); margin:2rem auto; padding:1rem; color:var(--muted); text-align:center; }
+    .bottom-nav { display:flex; justify-content:center; gap:1rem; padding:0.75rem 0; }
+    .bottom-nav a { color:var(--muted); text-decoration:none; font-size:0.95rem; }
+
+    /* small helper */
+    .meta-links { margin-top:0.5rem; color:var(--muted); font-size:0.95rem; }
+    .meta-links a { color:var(--muted); text-decoration:underline; }
+  </style>
+</head>
+<body>
+  <!-- HEADER -->
+  <header role="banner" aria-label="Site header">
+    <h1 class="mono">swapnest</h1>
+    <nav aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="products.html">Products</a>
+      <a href="contact.html" aria-current="page">Contact</a>
+    </nav>
+  </header>
+
+  <!-- MAIN -->
+  <main role="main">
+    <h1>Contact Swapnest</h1>
+    <p class="lead">Questions, reports, partnership ideas or volunteering — reach out below. We aim to respond within 2–3 business days.</p>
+
+    <div class="grid" role="region" aria-label="Contact and location area">
+      <!-- Left: Contact form card -->
+      <section class="card" aria-labelledby="contactHeading">
+        <h2 id="contactHeading">Send us a message</h2>
+        <p class="meta-links">Prefer email? <a href="mailto:hello@swapnest.example">hello@swapnest.example</a></p>
+
+        <!-- Fallback contact form (validated client-side) -->
+        <form id="contactForm" novalidate aria-describedby="formHelp">
+          <label for="name">Full name <span aria-hidden="true">*</span></label>
+          <input id="name" name="name" type="text" autocomplete="name" placeholder="Your full name" required aria-required="true" />
+
+          <label for="email">Email <span aria-hidden="true">*</span></label>
+          <input id="email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required aria-required="true" />
+
+          <label for="phone">Phone (optional)</label>
+          <input id="phone" name="phone" type="tel" placeholder="+27 71 000 0000" pattern="^\+?[0-9\s\-]{7,20}$" />
+
+          <label for="subject">Type of message <span aria-hidden="true">*</span></label>
+          <select id="subject" name="subject" required>
+            <option value="">-- choose --</option>
+            <option value="general">General question</option>
+            <option value="feedback">Feedback</option>
+            <option value="partnership">Partnership</option>
+            <option value="volunteer">Volunteer</option>
+          </select>
+
+          <label for="message">Message <span aria-hidden="true">*</span></label>
+          <textarea id="message" name="message" required minlength="10" placeholder="Tell us about your question or idea"></textarea>
+
+          <button class="btn" id="submitBtn" type="submit">Send message</button>
+
+          <div id="formResult" class="form-message" role="status" aria-live="polite" style="display:none;"></div>
+          <p id="formHelp" style="margin-top:0.5rem;color:var(--muted);font-size:0.9rem;">We will not share your contact details. This form uses client-side validation and a mailto fallback if no backend is present.</p>
+        </form>
+      </section>
+
+      <!-- Right: Map card -->
+      <aside class="card" aria-labelledby="locationHeading">
+        <h2 id="locationHeading">Our location</h2>
+        <p class="meta-links">Visit us at IIE MSA, Johannesburg — drop in during event hours or contact us first.</p>
+        <div id="map" role="application" aria-label="Map showing Swapnest location"></div>
+        <p style="margin-top:0.75rem;color:var(--muted);font-size:0.95rem;">Click the marker for directions. Use the "Find my location" button to center the map on your device.</p>
+        <div style="margin-top:0.5rem;">
+          <button id="locateBtn" class="btn" style="background:#2a3340;color:#fff;padding:0.45rem 0.6rem;border-radius:8px;border:none;">Find my location</button>
+        </div>
+      </aside>
+    </div>
+
+    <!-- Optional: privacy & contact quick links -->
+    <div style="max-width:var(--max-width);margin:1rem auto;color:var(--muted);">
+      <p>Need press info or partnership proposals? Email <a href="mailto:partnerships@swapnest.example">partnerships@swapnest.example</a>.</p>
+    </div>
   </main>
 
   <!-- FOOTER -->
-  <footer>
+  <footer role="contentinfo">
     <p class="mono">© 2025 swapnest</p>
   </footer>
 
   <!-- BOTTOM NAV -->
   <div class="bottom-nav" role="navigation" aria-label="Quick navigation">
-    <a href="index.html"><span class="nav-dot" aria-hidden="true"></span>Home</a>
-    <a href="products.html"><span class="nav-dot" aria-hidden="true"></span>Products</a>
-    <a href="contact.html"><span class="nav-dot" aria-hidden="true"></span>Contact</a>
+    <a href="index.html">Home</a>
+    <a href="products.html">Products</a>
+    <a href="contact.html">Contact</a>
   </div>
 
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-o9N1jz7q0KJr2Dk7mLh2vI9qW1m52d3t8J3y4hJkT5s=" crossorigin=""></script>
+
+  <script>
+    // Contact form validation + AJAX-style simulated submission + mailto fallback
+    (function () {
+      const form = document.getElementById('contactForm');
+      const resultBox = document.getElementById('formResult');
+      const submitBtn = document.getElementById('submitBtn');
+
+      function showMessage(text, type='success') {
+        resultBox.style.display = 'block';
+        resultBox.className = 'form-message ' + (type === 'error' ? 'error' : 'success');
+        resultBox.textContent = text;
+        if (type === 'success') {
+          // auto-hide after 6s but keep visually accessible
+          setTimeout(()=> { resultBox.style.display = 'none'; }, 6000);
+        }
+      }
+
+      function validate(values) {
+        const errors = [];
+        if (!values.name || values.name.trim().length < 2) errors.push('Please provide your full name (min 2 characters).');
+        if (!values.email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(values.email)) errors.push('Please provide a valid email address.');
+        if (!values.subject) errors.push('Please select a message type.');
+        if (!values.message || values.message.trim().length < 10) errors.push('Message must be at least 10 characters.');
+        if (values.phone && !/^\+?[0-9\s\-]{7,20}$/.test(values.phone)) errors.push('Phone number format looks invalid.');
+        return errors;
+      }
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        resultBox.style.display = 'none';
+        const fd = new FormData(form);
+        const values = {
+          name: fd.get('name') || '',
+          email: fd.get('email') || '',
+          phone: fd.get('phone') || '',
+          subject: fd.get('subject') || '',
+          message: fd.get('message') || ''
+        };
+        const errors = validate(values);
+        if (errors.length) {
+          showMessage(errors.join(' '), 'error');
+          return;
+        }
+
+        // Disable form while "sending"
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Sending...';
+
+        // Simulated AJAX submit (replace with real fetch if you have a backend endpoint)
+        setTimeout(() => {
+          submitBtn.disabled = false;
+          submitBtn.textContent = 'Send message';
+
+          // If you have no backend, assemble mailto as fallback:
+          const recipient = 'hello@swapnest.example'; // CHANGE to your real contact email
+          const subjectEncoded = encodeURIComponent(`[Contact] ${values.subject} — ${values.name}`);
+          const body = encodeURIComponent(`Name: ${values.name}\nEmail: ${values.email}\nPhone: ${values.phone}\n\nMessage:\n${values.message}`);
+          const mailto = `mailto:${recipient}?subject=${subjectEncoded}&body=${body}`;
+
+          // Show success message and automatically open user's mail client as a fallback for sending
+          showMessage('Message ready — opening your email client to complete sending. If it does not open, send to ' + recipient, 'success');
+          // Attempt to open mail client (user will need to confirm)
+          window.location.href = mailto;
+
+          // Reset the form for a fresh state
+          form.reset();
+        }, 900); // short simulated delay
+      });
+    })();
+  </script>
+
+  <script>
+    // Dark Leaflet map centered at IIE MSA coordinates: [-26.083342, 27.876455]
+    (function () {
+      const lat = -26.083342, lon = 27.876455;
+      // initialize map
+      const map = L.map('map', { zoomControl: true, scrollWheelZoom: false }).setView([lat, lon], 15);
+
+      // Carto DarkMatter tiles (dark style)
+      L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+        attribution: '&copy; <a href="https://carto.com">Carto</a> &copy; <a href="https://openstreetmap.org">OSM</a>',
+        maxZoom: 19
+      }).addTo(map);
+
+      // custom marker styling using circle marker for high contrast on dark background
+      const marker = L.circleMarker([lat, lon], {
+        radius: 9,
+        color: '#f4a261',
+        fillColor: '#f4a261',
+        fillOpacity: 1,
+        weight: 1
+      }).addTo(map);
+
+      marker.bindPopup('<strong>Swapnest (IIE MSA)</strong><br/>Visit during event hours or contact first.').openPopup();
+
+      // "Find my location" button
+      document.getElementById('locateBtn').addEventListener('click', () => {
+        if (!navigator.geolocation) {
+          alert('Geolocation is not supported by your browser.');
+          return;
+        }
+        document.getElementById('locateBtn').textContent = 'Locating…';
+        navigator.geolocation.getCurrentPosition(position => {
+          const latlng = [position.coords.latitude, position.coords.longitude];
+          L.marker(latlng).addTo(map).bindPopup('You are here').openPopup();
+          map.setView(latlng, 13);
+          document.getElementById('locateBtn').textContent = 'Find my location';
+        }, (err) => {
+          alert('Could not determine your location: ' + (err.message || 'permission denied'));
+          document.getElementById('locateBtn').textContent = 'Find my location';
+        }, { enableHighAccuracy: true, timeout: 8000 });
+      });
+
+      // Make map keyboard accessible (focus)
+      map.getContainer().setAttribute('tabindex', '0');
+    })();
+  </script>
 </body>
 </html>
